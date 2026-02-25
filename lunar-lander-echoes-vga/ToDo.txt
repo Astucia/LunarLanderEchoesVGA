@@ -1,0 +1,23 @@
+TO DO
+
+Crear personaje
+-Agregar modelo LISTO
+-Agregar motores
+-Agregar rotación
+-Escudo
+Notas: nave es un rigibody
+
+Crear nivel
+-Plataforma de aterrizaje
+-Terrenos sin bonificación
+-Piso/Terreno no aterrizable
+-Obstáculos
+-Power Up (Depósitos de combustible)
+Notas: aterriza es staticbody
+áreas para la colision
+
+Interfaz de Usuario (UI)
+-Velocidad
+-Combustible
+-Puntuación
+-Controles
