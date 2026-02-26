@@ -8,11 +8,11 @@ Crear personaje
 Notas: nave es un rigibody
 
 Crear nivel
--Plataforma de aterrizaje
--Terrenos sin bonificación
--Piso/Terreno no aterrizable
--Obstáculos
--Power Up (Depósitos de combustible)
+-Plataforma de aterrizaje LISTO
+-Terrenos sin bonificación LISTO
+-Piso/Terreno no aterrizable LISTO
+-Obstáculos LISTO
+-Power Up (Depósitos de combustible) 
 Notas: aterriza es staticbody
 áreas para la colision
 
