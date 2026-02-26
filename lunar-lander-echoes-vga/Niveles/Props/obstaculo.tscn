@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://mp0srhrlxuar"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1upe8"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_i6qg2"]
+material = SubResource("StandardMaterial3D_1upe8")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wyq5n"]
+data = PackedVector3Array(0, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, -0.5, -0.5, -0.5, 0, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Obstaculo" type="Node3D" unique_id=1587964437]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1634345813 groups=["Crash"]]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=829001893]
+mesh = SubResource("PrismMesh_i6qg2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=248842147]
+shape = SubResource("ConcavePolygonShape3D_wyq5n")

@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://dhjjfa4k0j2n6"]
 
 [ext_resource type="PackedScene" uid="uid://rqgplelbsso7" path="res://Nave/nave.tscn" id="1_lsmtg"]
+[ext_resource type="PackedScene" uid="uid://digm28vqllkup" path="res://Niveles/Props/landing_base.tscn" id="2_aukub"]
+[ext_resource type="PackedScene" uid="uid://b2koh7hv6caj2" path="res://Niveles/Props/landing_base_gris.tscn" id="3_bl8qv"]
+[ext_resource type="PackedScene" uid="uid://mp0srhrlxuar" path="res://Niveles/Props/obstaculo.tscn" id="4_5vhgk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_aukub"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -15,10 +18,10 @@ sky = SubResource("Sky_bl8qv")
 tonemap_mode = 2
 
 [sub_resource type="BoxMesh" id="BoxMesh_76cjc"]
-size = Vector3(10, 4, 2)
+size = Vector3(60, 4, 6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t3vs2"]
-size = Vector3(10, 4, 2)
+size = Vector3(60, 4, 6)
 
 [node name="Nivel0" type="Node3D" unique_id=1808038008]
 
@@ -29,13 +32,13 @@ environment = SubResource("Environment_5vhgk")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1283061888]
+[node name="Piso" type="StaticBody3D" parent="." unique_id=1283061888 groups=["Crash"]]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1318099363]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Piso" unique_id=1318099363]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9997306, 0)
 mesh = SubResource("BoxMesh_76cjc")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=395737950]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Piso" unique_id=395737950]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9939954, 0)
 shape = SubResource("BoxShape3D_t3vs2")
 
@@ -45,3 +48,21 @@ impulso = 20.0
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=529916075]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.989967, 25.962944)
+
+[node name="LandingBase" parent="." unique_id=1418045593 instance=ExtResource("2_aukub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.431335, 0.72490406, 0)
+
+[node name="LandingBase2" parent="." unique_id=1976961704 instance=ExtResource("2_aukub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.450647, 7.206922, 0)
+
+[node name="LandingBase3" parent="." unique_id=1299854194 instance=ExtResource("3_bl8qv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.496144, 0.4718809, 0)
+
+[node name="Obstaculo" parent="." unique_id=1587964437 instance=ExtResource("4_5vhgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1133375, 6.701048, 0)
+
+[node name="Obstaculo2" parent="." unique_id=593798837 instance=ExtResource("4_5vhgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.521388, 6.701048, 0)
+
+[node name="Obstaculo3" parent="." unique_id=1409677723 instance=ExtResource("4_5vhgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.418168, 3.0324821, 0)

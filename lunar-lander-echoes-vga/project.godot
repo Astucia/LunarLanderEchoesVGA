@@ -15,6 +15,12 @@ run/main_scene="uid://dhjjfa4k0j2n6"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[global_group]
+
+Crash=""
+Bonus=""
+Victoria=""
+
 [input]
 
 motor={

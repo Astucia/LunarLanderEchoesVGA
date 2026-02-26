@@ -2,8 +2,8 @@ TO DO
 
 Crear personaje
 -Agregar modelo LISTO
--Agregar motores
--Agregar rotación
+-Agregar motores LISTO
+-Agregar rotación LISTO
 -Escudo
 Notas: nave es un rigibody
 

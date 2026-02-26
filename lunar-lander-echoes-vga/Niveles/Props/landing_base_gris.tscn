@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b2koh7hv6caj2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lsmtg"]
+albedo_color = Color(0.26293245, 0.26293245, 0.26293245, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_aukub"]
+material = SubResource("StandardMaterial3D_lsmtg")
+size = Vector3(4, 0.5, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bl8qv"]
+size = Vector3(4, 0.5, 4)
+
+[node name="LandingBase" type="StaticBody3D" unique_id=1418045593 groups=["Victoria"]]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=550152818]
+mesh = SubResource("BoxMesh_aukub")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1854045272]
+shape = SubResource("BoxShape3D_bl8qv")
