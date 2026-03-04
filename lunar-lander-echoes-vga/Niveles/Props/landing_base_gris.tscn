@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://b2koh7hv6caj2"]
 
+[ext_resource type="Script" uid="uid://dluytsm564ny" path="res://Niveles/Props/landing_bases.gd" id="1_evc72"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lsmtg"]
 albedo_color = Color(0.26293245, 0.26293245, 0.26293245, 1)
 
@@ -11,6 +13,7 @@ size = Vector3(4, 0.5, 4)
 size = Vector3(4, 0.5, 4)
 
 [node name="LandingBase" type="StaticBody3D" unique_id=1418045593 groups=["Victoria"]]
+script = ExtResource("1_evc72")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=550152818]
 mesh = SubResource("BoxMesh_aukub")

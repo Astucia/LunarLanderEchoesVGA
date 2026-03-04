@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://digm28vqllkup"]
 
+[ext_resource type="Script" uid="uid://dluytsm564ny" path="res://Niveles/Props/landing_bases.gd" id="1_5570b"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lsmtg"]
 albedo_color = Color(5.77569e-06, 0.89458334, 0.3731514, 1)
 
@@ -11,6 +13,7 @@ size = Vector3(4, 0.5, 4)
 size = Vector3(4, 0.5, 4)
 
 [node name="LandingBase" type="StaticBody3D" unique_id=1418045593 groups=["Bonus"]]
+script = ExtResource("1_5570b")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=550152818]
 mesh = SubResource("BoxMesh_aukub")

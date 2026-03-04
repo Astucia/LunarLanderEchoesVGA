@@ -32,12 +32,20 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node) -> void:
 	print(body.get_groups())
 	if body.is_in_group("Victoria"):
-		print("Victoria")
+		if body is landing_base:
+			print(body.victoria())
+
 	elif body.is_in_group("Crash"):
-		print("Game Over")
-		get_tree().reload_current_scene()
+		print(crash_game_over(body.name))
+		
 	elif body.is_in_group("Bonus"):
 		print("Bonus")
 	
 	
 	pass # Replace with function body.
+	
+func crash_game_over(objeto : String = "") -> String :
+	var mensaje = "Chocaste con: " + objeto + " - Game Over"
+	get_tree().call_deferred("reload_current_scene")
+	return mensaje
+	
