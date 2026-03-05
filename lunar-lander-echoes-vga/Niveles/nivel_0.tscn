@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://digm28vqllkup" path="res://Niveles/Props/landing_base.tscn" id="2_aukub"]
 [ext_resource type="PackedScene" uid="uid://b2koh7hv6caj2" path="res://Niveles/Props/landing_base_gris.tscn" id="3_bl8qv"]
 [ext_resource type="PackedScene" uid="uid://mp0srhrlxuar" path="res://Niveles/Props/obstaculo.tscn" id="4_5vhgk"]
+[ext_resource type="PackedScene" uid="uid://dlp0o43nfb8wp" path="res://Niveles/Props/trampa_movil.tscn" id="5_76cjc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_aukub"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -69,3 +70,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.521388, 6.701048, 0)
 
 [node name="Obstaculo3" parent="." unique_id=1409677723 instance=ExtResource("4_5vhgk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.418168, 3.0324821, 0)
+
+[node name="TrampaMovil" parent="." unique_id=512042106 instance=ExtResource("5_76cjc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.306189, 1.8385692, 0)
+destino = Vector3(0, 10, 0)
+duracion = 3.0

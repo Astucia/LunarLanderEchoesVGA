@@ -35,8 +35,8 @@ func _on_body_entered(body: Node) -> void:
 		if body is landing_base:
 			print(body.victoria())
 
-	elif body.is_in_group("Crash"):
-		print(crash_game_over(body.name))
+	#elif body.is_in_group("Crash"):
+		#print(crash_game_over(body.name))
 		
 	elif body.is_in_group("Bonus"):
 		print("Bonus")
@@ -45,7 +45,16 @@ func _on_body_entered(body: Node) -> void:
 	pass # Replace with function body.
 	
 func crash_game_over(objeto : String = "") -> String :
+		
+	#set_process(false)
+	set_physics_process(false)
+	
+	
+	var tween = create_tween()
+	tween.tween_interval(3.0)
+	tween.tween_callback(get_tree().reload_current_scene)
+	
 	var mensaje = "Chocaste con: " + objeto + " - Game Over"
-	get_tree().call_deferred("reload_current_scene")
+	#get_tree().call_deferred("reload_current_scene")
 	return mensaje
 	

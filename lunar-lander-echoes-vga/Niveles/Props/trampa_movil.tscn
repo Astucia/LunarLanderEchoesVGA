@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dlp0o43nfb8wp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d61ds"]
+albedo_color = Color(1, 1, 0.12156863, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1odw8"]
+material = SubResource("StandardMaterial3D_d61ds")
+size = Vector3(1, 0.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ls2vx"]
+size = Vector3(1, 0.5, 1)
+
+[node name="TrampaMovil" type="AnimatableBody3D" unique_id=512042106]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=629689822]
+mesh = SubResource("BoxMesh_1odw8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=388384834]
+shape = SubResource("BoxShape3D_ls2vx")
