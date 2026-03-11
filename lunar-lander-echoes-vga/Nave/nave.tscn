@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://rqgplelbsso7"]
 
 [ext_resource type="Script" uid="uid://bekb1620is12l" path="res://Nave/nave.gd" id="1_2j0rn"]
+[ext_resource type="AudioStream" uid="uid://bhfea8ctul3c" path="res://Audio/SFX/EXPLOSION Bang 04.ogg" id="2_ltov4"]
+[ext_resource type="AudioStream" uid="uid://estrxoh7jqes" path="res://Audio/SFX/SUCCESS CHEERS Win Cute Vocal Chime 03.ogg" id="3_h011k"]
+[ext_resource type="AudioStream" uid="uid://62icm0t6dja2" path="res://Audio/SFX/ENGINE Motor Heavy Loop 08.ogg" id="4_nxrwe"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_gmwes"]
 
@@ -20,5 +23,14 @@ mesh = SubResource("CylinderMesh_gmwes")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1028396047]
 shape = SubResource("CylinderShape3D_2j0rn")
+
+[node name="ExplosionSFX" type="AudioStreamPlayer" parent="." unique_id=43942447]
+stream = ExtResource("2_ltov4")
+
+[node name="VictoriaSFX" type="AudioStreamPlayer" parent="." unique_id=1344828043]
+stream = ExtResource("3_h011k")
+
+[node name="TurbinaIzq" type="AudioStreamPlayer3D" parent="." unique_id=1522801524]
+stream = ExtResource("4_nxrwe")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

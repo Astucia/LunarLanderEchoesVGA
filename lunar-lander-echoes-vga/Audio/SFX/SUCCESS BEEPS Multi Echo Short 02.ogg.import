@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cwy8fdeeht1t8"
+path="res://.godot/imported/SUCCESS BEEPS Multi Echo Short 02.ogg-13cdeaf3216de4b80c7c342462d3986d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/SFX/SUCCESS BEEPS Multi Echo Short 02.ogg"
+dest_files=["res://.godot/imported/SUCCESS BEEPS Multi Echo Short 02.ogg-13cdeaf3216de4b80c7c342462d3986d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

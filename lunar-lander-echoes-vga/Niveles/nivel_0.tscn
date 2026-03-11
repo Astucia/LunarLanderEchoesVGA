@@ -72,6 +72,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.521388, 6.701048, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.418168, 3.0324821, 0)
 
 [node name="TrampaMovil" parent="." unique_id=512042106 instance=ExtResource("5_76cjc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.306189, 1.8385692, 0)
-destino = Vector3(0, 10, 0)
-duracion = 3.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8373775, 2.660643, 0)
+path = Array[Vector3]([Vector3(0, 2, 0), Vector3(20, 20, 0), Vector3(20, 0, 0)])
