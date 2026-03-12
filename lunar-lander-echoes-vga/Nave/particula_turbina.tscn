@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dr7kxwrubycgc"]
+
+[ext_resource type="Texture2D" uid="uid://dnfhjmrul4nw" path="res://VFX/muzzle_05_a.png" id="1_fbgge"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbgge"]
+transparency = 1
+albedo_texture = ExtResource("1_fbgge")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="Gradient" id="Gradient_6ayi8"]
+offsets = PackedFloat32Array(0, 0.83150184, 1)
+colors = PackedColorArray(1, 1, 0, 1, 0.7645982, 0.34067437, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_al0kq"]
+gradient = SubResource("Gradient_6ayi8")
+
+[sub_resource type="Curve" id="Curve_fw7r4"]
+_data = [Vector2(0, 1), 0.0, -0.8767699, 0, 1, Vector2(0.85618734, 0.24932069), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.7336491, 0.0, 1, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_pawdu"]
+curve = SubResource("Curve_fw7r4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w6ndw"]
+emission_shape_scale = Vector3(0.3, 0.3, 0.3)
+direction = Vector3(0, -1, 0)
+spread = 10.0
+initial_velocity_max = 15.0
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_pawdu")
+color = Color(0.8679489, 0.8106349, 3.85046e-07, 1)
+color_ramp = SubResource("GradientTexture1D_al0kq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_6ayi8"]
+
+[node name="ParticulaTurbina" type="GPUParticles3D" unique_id=1524822921]
+material_override = SubResource("StandardMaterial3D_fbgge")
+amount = 32
+lifetime = 0.4
+randomness = 0.69
+transform_align = 1
+process_material = SubResource("ParticleProcessMaterial_w6ndw")
+draw_pass_1 = SubResource("QuadMesh_6ayi8")

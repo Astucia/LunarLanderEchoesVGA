@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://bhfea8ctul3c" path="res://Audio/SFX/EXPLOSION Bang 04.ogg" id="2_ltov4"]
 [ext_resource type="AudioStream" uid="uid://estrxoh7jqes" path="res://Audio/SFX/SUCCESS CHEERS Win Cute Vocal Chime 03.ogg" id="3_h011k"]
 [ext_resource type="AudioStream" uid="uid://62icm0t6dja2" path="res://Audio/SFX/ENGINE Motor Heavy Loop 08.ogg" id="4_nxrwe"]
+[ext_resource type="PackedScene" uid="uid://dr7kxwrubycgc" path="res://Nave/particula_turbina.tscn" id="5_e1old"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_gmwes"]
 
@@ -32,5 +33,14 @@ stream = ExtResource("3_h011k")
 
 [node name="TurbinaIzq" type="AudioStreamPlayer3D" parent="." unique_id=1522801524]
 stream = ExtResource("4_nxrwe")
+
+[node name="ParticulaTurbina" parent="." unique_id=1524822921 instance=ExtResource("5_e1old")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
+
+[node name="ParticulaTurbinaDerecha" parent="." unique_id=1278427617 instance=ExtResource("5_e1old")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, -0.9, 0)
+
+[node name="ParticulaTurbinaIzquierda" parent="." unique_id=1858896585 instance=ExtResource("5_e1old")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -0.9, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

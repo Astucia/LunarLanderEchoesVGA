@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://cn88t8eaxel1l"]
+
+[ext_resource type="AudioStream" uid="uid://estrxoh7jqes" path="res://Audio/SFX/SUCCESS CHEERS Win Cute Vocal Chime 03.ogg" id="1_878a0"]
+[ext_resource type="Script" uid="uid://b706ryv7bjmhw" path="res://EjemploAudio/player_3d.gd" id="1_yo33a"]
+[ext_resource type="AudioStream" uid="uid://c63j0iw7tw32" path="res://Audio/SFX/SUCCESS PICKUP Collect Chime 01.ogg" id="2_ew64p"]
+[ext_resource type="AudioStream" uid="uid://bhfea8ctul3c" path="res://Audio/SFX/EXPLOSION Bang 04.ogg" id="4_gw6dj"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_878a0"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_ew64p"]
+sky_material = SubResource("ProceduralSkyMaterial_878a0")
+
+[sub_resource type="Environment" id="Environment_gw6dj"]
+background_mode = 2
+sky = SubResource("Sky_ew64p")
+tonemap_mode = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_yo33a"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yo33a"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ew64p"]
+albedo_color = Color(1, 0.40104735, 0.76186824, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5126d"]
+material = SubResource("StandardMaterial3D_ew64p")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gw6dj"]
+albedo_color = Color(4.042983e-06, 0.7226491, 0.92225504, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7or8c"]
+material = SubResource("StandardMaterial3D_gw6dj")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0lmph"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_geawj"]
+
+[node name="AudioTest" type="Node3D" unique_id=201897193]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1219015764]
+environment = SubResource("Environment_gw6dj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1002688383]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Piso" type="StaticBody3D" parent="." unique_id=716624182]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Piso" unique_id=92287613]
+mesh = SubResource("BoxMesh_yo33a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Piso" unique_id=151730766]
+shape = SubResource("BoxShape3D_yo33a")
+
+[node name="Emisor" type="MeshInstance3D" parent="." unique_id=450808158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.999979, 2.0939488, -7.1782036)
+mesh = SubResource("CapsuleMesh_5126d")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Emisor" unique_id=1130801872]
+stream = ExtResource("1_878a0")
+autoplay = true
+max_distance = 7.95
+parameters/looping = true
+
+[node name="Emisor2" type="MeshInstance3D" parent="." unique_id=23646864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.989462, 2.0939488, 5.0116463)
+mesh = SubResource("CapsuleMesh_7or8c")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Emisor2" unique_id=2126186512]
+stream = ExtResource("2_ew64p")
+autoplay = true
+max_distance = 7.95
+parameters/looping = true
+
+[node name="Player3D" type="CharacterBody3D" parent="." unique_id=57534512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8313551, 0)
+script = ExtResource("1_yo33a")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player3D" unique_id=413620431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1841545, 0)
+mesh = SubResource("CapsuleMesh_0lmph")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player3D" unique_id=1794393406]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1912851, 0)
+shape = SubResource("CapsuleShape3D_geawj")
+
+[node name="Camera3D" type="Camera3D" parent="Player3D" unique_id=1590371858]
+transform = Transform3D(1, 0, 0, 0, 0.83867055, 0.54463905, 0, -0.54463905, 0.83867055, 0, 5.057, 2.549)
+
+[node name="AudioListener3D" type="AudioListener3D" parent="Player3D/Camera3D" unique_id=1798567472]
+current = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1492181019]
+stream = ExtResource("4_gw6dj")
+volume_db = -25.862
+autoplay = true
+parameters/looping = true

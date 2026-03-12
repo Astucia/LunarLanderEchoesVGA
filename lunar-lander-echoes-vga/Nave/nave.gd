@@ -11,15 +11,20 @@ extends RigidBody3D
 @onready var victoria: AudioStreamPlayer = $VictoriaSFX
 @onready var turbina: AudioStreamPlayer3D = $TurbinaIzq
 
+@onready var particula_turbina: GPUParticles3D = $ParticulaTurbina
+@onready var particula_turbina_derecha: GPUParticles3D = $ParticulaTurbinaDerecha
+@onready var particula_turbina_izquierda: GPUParticles3D = $ParticulaTurbinaIzquierda
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("motor") and combustible > 0:
 		apply_central_impulse(basis.y * impulso * delta)
 		combustible = clamp(combustible - (consumo * delta),0,combustible)
+		particula_turbina.emitting = true
 		if turbina.playing == false:
 			turbina.play()
 	else:
 		turbina.stop()
+		particula_turbina.emitting = false
 		
 		
 		
@@ -28,9 +33,15 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_pressed("rotacion_left"):
 		apply_torque(Vector3(0,0,inclinacion * delta))
+		particula_turbina_derecha.emitting = true
+	else:
+		particula_turbina_derecha.emitting = false
 		
 	if Input.is_action_pressed("rotacion_right"):
 		apply_torque(Vector3(0,0,-inclinacion * delta))
+		particula_turbina_izquierda.emitting = true
+	else:
+		particula_turbina_izquierda.emitting = false
 	
 	pass
 
